@@ -132,7 +132,7 @@ fn countValidPassports(r: anytype, isValid: fn (Passport) bool, allocator: *std.
                 return err;
             }
             exitNext = true;
-        }
+        };
         if (res) |act| {
             defer allocator.free(act);
             try buf.appendSlice(act);

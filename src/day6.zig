@@ -4,8 +4,6 @@ const testing = std.testing;
 const expect = testing.expect;
 const expectError = testing.expectError;
 
-
-
 pub fn runPart1(r: anytype) !usize {
     return countAnswers(r, 0, opOr);
 }
@@ -22,7 +20,7 @@ inline fn opAnd(a: u26, b: u26) u26 {
     return a & b;
 }
 
-fn countAnswers(r: anytype, start: u26, comptime op: fn(u26, u26) u26) !usize {
+fn countAnswers(r: anytype, start: u26, comptime op: fn (u26, u26) u26) !usize {
     var sum: usize = 0;
     var acc: u26 = start;
     var buf: [27]u8 = undefined;
@@ -42,7 +40,7 @@ fn countAnswers(r: anytype, start: u26, comptime op: fn(u26, u26) u26) !usize {
     }
 }
 
-fn parseForm(s: []const u8) !u26{
+fn parseForm(s: []const u8) !u26 {
     var acc: u26 = 0;
     for (s) |c| {
         switch (c) {
@@ -53,25 +51,24 @@ fn parseForm(s: []const u8) !u26{
     return acc;
 }
 
-
 test "count answers" {
     var formList =
-      \\abc
-      \\
-      \\a
-      \\b
-      \\c
-      \\
-      \\ab
-      \\ac
-      \\
-      \\a
-      \\a
-      \\a
-      \\a
-      \\
-      \\b
-      \\
+        \\abc
+        \\
+        \\a
+        \\b
+        \\c
+        \\
+        \\ab
+        \\ac
+        \\
+        \\a
+        \\a
+        \\a
+        \\a
+        \\
+        \\b
+        \\
     ;
     var r = io.fixedBufferStream(formList).reader();
     expect(11 == try countAnswers(r, 0, opOr));
