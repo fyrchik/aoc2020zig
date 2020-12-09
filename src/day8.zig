@@ -293,7 +293,7 @@ test "tagInstructions" {
     defer testing.allocator.free(tags);
     mem.set(isize, tags, -1);
 
-    const final_tag = try v.tagEvery(tags);
+    const final_tag = try v.tagInstructions(tags);
     expectEqual(@as(isize, 8), final_tag);
     expectEqual(@as(isize, 0), tags[0]);
     expectEqual(@as(isize, 0), tags[1]);
