@@ -1,7 +1,4 @@
-const std = @import("std");
-const fmt = std.fmt;
-const io = std.io;
-const testing = std.testing;
+usingnamespace @import("util.zig");
 
 const ParseError = error{
     LineTooLong,

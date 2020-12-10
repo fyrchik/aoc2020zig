@@ -1,17 +1,4 @@
-const std = @import("std");
-const mem = std.mem;
-const io = std.io;
-const fmt = std.fmt;
-
-const print = std.debug.print;
-const assert = std.debug.assert;
-
-const testing = std.testing;
-const expect = testing.expect;
-const expectError = testing.expectError;
-const expectEqual = testing.expectEqual;
-const expectEqualStrings = testing.expectEqualStrings;
-const Allocator = mem.Allocator;
+usingnamespace @import("util.zig");
 
 pub fn runPart1(r: anytype) !usize {
     var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);

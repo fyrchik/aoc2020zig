@@ -1,10 +1,4 @@
-const std = @import("std");
-const fmt = std.fmt;
-const io = std.io;
-const unicode = std.unicode;
-const testing = std.testing;
-const expect = testing.expect;
-const mem = std.mem;
+usingnamespace @import("util.zig");
 
 const Policy = struct {
     letter: u21,

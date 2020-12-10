@@ -1,16 +1,4 @@
-const std = @import("std");
-const mem = std.mem;
-const io = std.io;
-const fmt = std.fmt;
-const testing = std.testing;
-const expect = testing.expect;
-const expectError = testing.expectError;
-const expectEqual = testing.expectEqual;
-const expectEqualStrings = testing.expectEqualStrings;
-
-const StringHashMap = std.StringHashMap;
-const ArrayList = std.ArrayList;
-const Allocator = mem.Allocator;
+usingnamespace @import("util.zig");
 
 pub fn runPart1(r: anytype) !usize {
     return run(r, addReverse, true);

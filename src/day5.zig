@@ -1,5 +1,4 @@
-const std = @import("std");
-const testing = std.testing;
+usingnamespace @import("util.zig");
 
 fn fromBinary(
     comptime T: type,

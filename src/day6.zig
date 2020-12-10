@@ -1,8 +1,4 @@
-const std = @import("std");
-const io = std.io;
-const testing = std.testing;
-const expect = testing.expect;
-const expectError = testing.expectError;
+usingnamespace @import("util.zig");
 
 pub fn runPart1(r: anytype) !usize {
     return countAnswers(r, 0, opOr);
