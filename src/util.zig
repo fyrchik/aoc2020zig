@@ -2,6 +2,7 @@ pub const std = @import("std");
 pub const mem = std.mem;
 pub const io = std.io;
 pub const fmt = std.fmt;
+pub const math = std.math;
 pub const unicode = std.unicode;
 pub const print = std.debug.print;
 pub const assert = std.debug.assert;
