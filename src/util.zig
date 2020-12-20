@@ -16,3 +16,23 @@ pub const expectEqualStrings = testing.expectEqualStrings;
 pub const Allocator = mem.Allocator;
 pub const ArrayList = std.ArrayList;
 pub const StringHashMap = std.StringHashMap;
+pub const AutoHashMap = std.AutoHashMap;
+
+// Allocates 2-dimensional slice.
+// Caller owns returned slice.
+pub fn alloc2(comptime T: type, a: *Allocator, x_len: usize, y_len: usize) ![][]T {
+    var slice = try a.alloc([]T, x_len);
+    errdefer a.free(slice);
+    for (slice) |*s| {
+        s.* = try a.alloc(T, y_len);
+        errdefer a.free(s.*);
+    }
+    return slice;
+}
+
+pub fn free2(comptime T: type, a: *Allocator, slice: [][]T) void {
+    for (slice) |elem| {
+        a.free(elem);
+    }
+    a.free(slice);
+}

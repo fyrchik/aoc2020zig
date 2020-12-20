@@ -19,6 +19,7 @@ const day16 = @import("src/day16.zig");
 const day17 = @import("src/day17.zig");
 const day18 = @import("src/day18.zig");
 const day19 = @import("src/day19.zig");
+const day20 = @import("src/day20.zig");
 
 var stdin = std.io.getStdIn().reader();
 var stdout = std.io.getStdOut().writer();
@@ -61,6 +62,8 @@ pub fn main() anyerror!void {
     //const result = try day18.runPart1(stdin);
     //const result = try day18.runPart2(stdin);
     //const result = try day19.runPart1(stdin);
-    const result = try day19.runPart2(stdin);
+    //const result = try day19.runPart2(stdin);
+    //const result = try day20.runPart1(stdin);
+    const result = try day20.runPart2(stdin);
     try stdout.print("{}\n", .{result});
 }
