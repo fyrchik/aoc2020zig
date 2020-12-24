@@ -1,5 +1,6 @@
 pub const std = @import("std");
 pub const mem = std.mem;
+pub const hash = std.hash;
 pub const io = std.io;
 pub const fmt = std.fmt;
 pub const math = std.math;
@@ -15,6 +16,7 @@ pub const expectEqualStrings = testing.expectEqualStrings;
 
 pub const Allocator = mem.Allocator;
 pub const ArrayList = std.ArrayList;
+pub const TailQueue = std.TailQueue;
 pub const StringHashMap = std.StringHashMap;
 pub const AutoHashMap = std.AutoHashMap;
 

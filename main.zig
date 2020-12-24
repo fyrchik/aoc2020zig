@@ -27,6 +27,6 @@ var stdin = std.io.getStdIn().reader();
 var stdout = std.io.getStdOut().writer();
 
 pub fn main() anyerror!void {
-    const result = try day24.runPart2(stdin);
+    const result = try day22.runPart2(stdin);
     try stdout.print("{}\n", .{result});
 }
